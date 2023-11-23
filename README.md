@@ -19,5 +19,14 @@ https://gluonhq.com/products/javafx/
 https://git-scm.com/download/win
 ```
 
-### Tutorials (GIF Provided)
+### Tutorials (asa gDrive yung full)
 
+![Google Drive (Watch mo)](https://drive.google.com/file/d/1R2DPM-IA6nz7gia9_Y3N7ndr5z5z25tO/view?usp=drive_link)
+
+### vmArgs (add this line)
+
+Para ma-locate mismo ni VSCode kung saan nakalagay yung mga na-download mo na JAR files galing kay OpenJDK
+
+```sh
+"vmArgs": "--module-path \"Your Path To The lib Folder" --add-modules javafx.controls,javafx.fxml"
+```
