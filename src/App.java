@@ -14,7 +14,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
         // Specifying to load FXML document
         FXMLLoader loader = new FXMLLoader();
-        String fxmlDocPath = "src/views/register-success.fxml";
+        String fxmlDocPath = "src/views/login.fxml";
         try (FileInputStream fxmlStream = new FileInputStream(fxmlDocPath)) {
             AnchorPane root = (AnchorPane) loader.load(fxmlStream);
             Scene scene = new Scene(root);
