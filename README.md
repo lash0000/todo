@@ -11,5 +11,6 @@ So ngayon need natin maka-install muna ng two:
 - Git
 
 ### Eto yung mga direct links para ma-DL
-`https://gluonhq.com/products/javafx/`
-`https://git-scm.com/download/win`
+```https://gluonhq.com/products/javafx/```
+
+```https://git-scm.com/download/win```
