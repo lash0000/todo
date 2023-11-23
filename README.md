@@ -1,4 +1,4 @@
-### Wanna learn to contribute? (Basic Mode)
+## Wanna learn to contribute? (Basic Mode)
 
 `Translation: Taglish`
 
@@ -8,7 +8,7 @@ instead of Netbeans btw (who the hell use it still for now?)
 So ngayon need natin maka-install muna ng two:
 
 - OpenJDK (JavaFX library)
-- Git
+- Git (para maka-collab hehe)
 
 ### Eto yung mga direct links para ma-DL
 
@@ -18,3 +18,6 @@ https://gluonhq.com/products/javafx/
 ```sh
 https://git-scm.com/download/win
 ```
+
+### Tutorials (GIF Provided)
+
