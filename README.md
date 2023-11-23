@@ -32,3 +32,9 @@ Para ma-locate mismo ni VSCode kung saan nakalagay yung mga na-download mo na JA
 ```sh
 "vmArgs": "--module-path \"Your Path To The lib Folder" --add-modules javafx.controls,javafx.fxml"
 ```
+
+For example para sa vmArgs for the JVM gan2 (nasa .vscode setup q doon much better WAG BAGUHIN)
+
+```sh
+"vmArgs": "--module-path \"D:\\Users\\rogu\\Downloads\\openjfx-21.0.1_windows-x64_bin-sdk\\javafx-sdk-21.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
+```
