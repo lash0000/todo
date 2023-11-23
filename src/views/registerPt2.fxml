@@ -13,16 +13,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1080.0" style="-fx-background-color: #DD1C77;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane layoutX="233.0" layoutY="58.0" prefHeight="525.0" prefWidth="615.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+      <BorderPane layoutX="243.0" layoutY="68.0" prefHeight="525.0" prefWidth="615.0" style="-fx-background-color: white; -fx-background-radius: 8;">
          <top>
             <VBox alignment="CENTER" prefHeight="88.0" prefWidth="615.0" spacing="6.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Welcome!">
+                  <Label text="You're almost there!">
                      <font>
                         <Font name="Segoe UI Bold" size="32.0" />
                      </font>
                   </Label>
-                  <Label text="To our Task Scheduler." textFill="#c3aeae">
+                  <Label text="Create a memorable password!" textFill="#c3aeae">
                      <font>
                         <Font name="Segoe UI" size="24.0" />
                      </font>
@@ -39,7 +39,7 @@
          <center>
             <VBox prefHeight="257.0" prefWidth="567.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="32.0" prefWidth="194.0" text="Email">
+                  <Label prefHeight="32.0" prefWidth="194.0" text="Password">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -50,7 +50,7 @@
                         <Insets bottom="12.0" />
                      </padding>
                   </Label>
-                  <TextField prefHeight="48.0" prefWidth="535.0" promptText="test@email.ph">
+                  <TextField prefHeight="48.0" prefWidth="535.0" promptText="new password">
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
@@ -64,7 +64,7 @@
                         <Font size="16.0" />
                      </font>
                   </TextField>
-                  <Label prefHeight="32.0" prefWidth="194.0" text="Password">
+                  <Label prefHeight="32.0" prefWidth="194.0" text="Confirm Password">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -75,7 +75,7 @@
                         <Insets bottom="12.0" />
                      </padding>
                   </Label>
-                  <PasswordField prefHeight="48.0" prefWidth="527.0" promptText="password">
+                  <PasswordField prefHeight="48.0" prefWidth="527.0" promptText="confirm password">
                      <VBox.margin>
                         <Insets bottom="12.0" />
                      </VBox.margin>
@@ -105,12 +105,12 @@
                   </Button>
                   <HBox prefHeight="40.0" prefWidth="527.0" spacing="6.0">
                      <children>
-                        <Label text="Need account?">
+                        <Label text="Have an account?">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label text="Register" textFill="#24a0ed">
+                        <Label text="Login" textFill="#24a0ed">
                            <font>
                               <Font size="20.0" />
                            </font>
