@@ -12,6 +12,9 @@ So ngayon need natin maka-install muna ng two:
 
 ### Eto yung mga direct links para ma-DL
 
-[link]
-(https://gluonhq.com/products/javafx/)
-[link](https://git-scm.com/download/win)
+```sh
+https://gluonhq.com/products/javafx/
+```
+```sh
+https://git-scm.com/download/win
+```
