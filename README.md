@@ -21,7 +21,9 @@ https://git-scm.com/download/win
 
 ### Tutorials (asa gDrive yung full)
 
-![Google Drive (Watch mo)](https://drive.google.com/file/d/1R2DPM-IA6nz7gia9_Y3N7ndr5z5z25tO/view?usp=drive_link)
+<a href="https://drive.google.com/file/d/1R2DPM-IA6nz7gia9_Y3N7ndr5z5z25tO/view?usp=drive_link">
+ Google Drive (watch mo)
+</a>
 
 ### vmArgs (add this line)
 
