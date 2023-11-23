@@ -25,7 +25,7 @@ https://git-scm.com/download/win
  Google Drive (watch mo)
 </a>
 
-### vmArgs (add this line)
+### vmArgs (add this line in .vscode/launch.json)
 
 Para ma-locate mismo ni VSCode kung saan nakalagay yung mga na-download mo na JAR files galing kay OpenJDK
 
