@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane layoutX="-1.0" layoutY="-1.0" prefHeight="642.0" prefWidth="1001.0" style="-fx-background-color: #fdfdfd;">
+      <BorderPane layoutX="-1.0" layoutY="-1.0" prefHeight="642.0" prefWidth="1080.0" style="-fx-background-color: #fdfdfd;">
          <left>
             <VBox prefHeight="642.0" prefWidth="240.0" style="-fx-background-color: #FAF9F9;" BorderPane.alignment="CENTER" />
          </left>
