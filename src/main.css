@@ -1,2 +1,30 @@
 /* custom operation if hindi madadaan sa inline lang ng xml :) */
 
+.left-ap{
+    -fx-background-color: white;
+    -fx-border-right: 1px solid #ddd;
+
+
+}
+
+.nav{
+    -fx-padding: 20px;
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.dashboard-pane{
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+}
+
+
+.nav:hover{
+    -fx-background-color: gray;
+}
+
+.btn{
+    -fx-background-color: #24A0ED;
+    -fx-text-fill: white;
+}
+
