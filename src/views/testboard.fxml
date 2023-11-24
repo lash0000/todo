@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="-1.0" layoutY="-1.0" prefHeight="642.0" prefWidth="1080.0" style="-fx-background-color: #fdfdfd;">
          <left>
-            <VBox prefHeight="642.0" prefWidth="240.0" style="-fx-background-color: #FAF9F9;" BorderPane.alignment="CENTER" />
+            <VBox prefHeight="642.0" prefWidth="240.0" style="-fx-background-color: #FAF9F9;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="34.0" prefWidth="224.0">
+                     <children>
+                        <Label text="Home" textFill="#66c2a4">
+                           <font>
+                              <Font name="Segoe UI Light" size="14.0" />
+                           </font></Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                     </padding>
+                  </HBox>
+                  <VBox prefHeight="167.0" prefWidth="224.0" spacing="6.0">
+                     <children>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: #EBEBEB;" text="Dashboard">
+                           <graphic>
+                              <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Downloads/house.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Segoe UI Light" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Dashboard">
+                           <graphic>
+                              <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Downloads/house.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="Segoe UI Light" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets right="16.0" />
+               </padding></VBox>
          </left>
       </BorderPane>
    </children>
