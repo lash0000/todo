@@ -35,7 +35,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/house-chimney.png" />
+                                    <Image url="@../assets/house-chimney.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -47,7 +47,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bell.png" />
+                                    <Image url="@../assets/bell.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -75,7 +75,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/sliders.png" />
+                                    <Image url="@../assets/sliders.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -90,7 +90,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/calendar-check.png" />
+                                    <Image url="@../assets/calendar-check.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -106,7 +106,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/user.png" />
+                                    <Image url="@../assets/user.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -118,7 +118,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/gear.png" />
+                                    <Image url="@../assets/gear.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -272,7 +272,7 @@
                                        <children>
                                           <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@img/science.png" />
+                                                <Image url="@../assets/science.png" />
                                              </image>
                                           </ImageView>
                                           <Label text="Create a task">

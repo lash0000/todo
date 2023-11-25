@@ -35,7 +35,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/house-chimney.png" />
+                                    <Image url="@../assets/house-chimney.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -47,7 +47,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/bell.png" />
+                                    <Image url="@../assets/bell.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -75,7 +75,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/sliders.png" />
+                                    <Image url="@../assets/sliders.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -90,7 +90,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/calendar-check.png" />
+                                    <Image url="@../assets/calendar-check.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -106,7 +106,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/user.png" />
+                                    <Image url="@../assets/user.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -118,7 +118,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@img/gear.png" />
+                                    <Image url="@../assets/gear.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -148,27 +148,73 @@
                         </Label>
                      </children>
                   </VBox>
-                  <HBox prefHeight="65.0" prefWidth="768.0" spacing="24.0">
+                  <VBox prefHeight="499.0" prefWidth="768.0" spacing="16.0">
                      <children>
-                        <VBox prefHeight="65.0" prefWidth="653.0" spacing="6.0">
+                        <HBox prefHeight="65.0" prefWidth="768.0" spacing="24.0" style="-fx-border-color: EBEBEB; -fx-border-radius: 6px;">
                            <children>
-                              <Label text="Task submitted">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="25.0" prefWidth="533.0" text="Task notification type 1" textFill="#66c2a4">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
+                              <VBox prefHeight="65.0" prefWidth="653.0" spacing="6.0">
+                                 <children>
+                                    <Label text="Task submitted">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="25.0" prefWidth="533.0" text="Task notification type 1 (remove it all during development)" textFill="#66c2a4">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                 </padding>
+                              </VBox>
                            </children>
-                           <padding>
-                              <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                           </padding>
-                        </VBox>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="768.0" spacing="24.0" style="-fx-border-color: EBEBEB; -fx-border-radius: 6px;">
+                           <children>
+                              <VBox prefHeight="65.0" prefWidth="653.0" spacing="6.0">
+                                 <children>
+                                    <Label text="Task is being overdued">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="25.0" prefWidth="533.0" text="Task notification type 2" textFill="#66c2a4">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="65.0" prefWidth="768.0" spacing="24.0" style="-fx-border-color: EBEBEB; -fx-border-radius: 6px;">
+                           <children>
+                              <VBox prefHeight="65.0" prefWidth="653.0" spacing="6.0">
+                                 <children>
+                                    <Label text="Task is being due tomorrow">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="25.0" prefWidth="533.0" text="Task notification type 3" textFill="#66c2a4">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
                      </children>
-                  </HBox>
+                  </VBox>
                </children>
                <padding>
                   <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
