@@ -15,3 +15,9 @@ Lagay ako logic for test user ^^ (test credential if di pa kaya mag-database for
 Email: test@email.com
 Password: qcu
 ```
+
+## Check niyo e2 mga devs (logic making lang haha)
+
+```sh
+https://excalidraw.com/#room=d0c3e56e045f25909dc7,7Oi_DRoIY2dbAugh9tfrQw
+```
