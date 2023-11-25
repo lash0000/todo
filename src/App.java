@@ -3,6 +3,7 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.layout.AnchorPane;
 
@@ -20,6 +21,7 @@ public class App extends Application {
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
             stage.setScene(scene);
+            stage.getIcons().add(new Image("assets/qcu-logo.png"));
             stage.setTitle("GROUP 5 - Task Scheduler");
             stage.setResizable(false); // Window Sizing Prevention
             stage.show();
