@@ -141,7 +141,7 @@
                               <Font name="Segoe UI Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label text="You have no pending task as of these date.">
+                        <Label style="-fx-text-fill: #66C2A4;" text="You have no pending task as of these date.">
                            <font>
                               <Font name="Segoe UI" size="24.0" />
                            </font>
@@ -187,7 +187,7 @@
                                     </VBox>
                                  </children>
                               </HBox>
-                              <Label ellipsisString="" prefHeight="48.0" prefWidth="286.0" text="Don't let your tasks go unorganized, make a to-do list today." wrapText="true">
+                              <Label ellipsisString="" prefHeight="48.0" prefWidth="286.0" style="-fx-text-fill: #66C2A4;" text="Don't let your tasks go unorganized, make a to-do list today." wrapText="true">
                                  <font>
                                     <Font name="Segoe UI" size="16.0" />
                                  </font>
@@ -206,7 +206,7 @@
                                           <Font name="Segoe UI Bold" size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="55.0" prefWidth="286.0" text="Shows the task that contains date." textOverrun="CLIP" wrapText="true">
+                                    <Label prefHeight="55.0" prefWidth="286.0" style="-fx-text-fill: #66C2A4;" text="Shows the task that contains date." textOverrun="CLIP" wrapText="true">
                                        <font>
                                           <Font name="Segoe UI" size="16.0" />
                                        </font>
@@ -275,12 +275,12 @@
                                                 <Image url="@img/science.png" />
                                              </image>
                                           </ImageView>
-                                          <Label text="Completed Task">
+                                          <Label text="Create a task">
                                              <font>
                                                 <Font name="Segoe UI Bold" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label prefHeight="19.0" prefWidth="273.0" text="Get ready to deal to assess your work.">
+                                          <Label prefHeight="19.0" prefWidth="273.0" style="-fx-text-fill: #66C2A4;" text="Get ready to deal to assess your work.">
                                              <font>
                                                 <Font name="Segoe UI" size="16.0" />
                                              </font>

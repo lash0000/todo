@@ -8,3 +8,10 @@ H - 640
 
 Ganito lang dapat siya hanggang dulo...
 ```
+
+```
+Lagay ako logic for test user ^^ (test credential if di pa kaya mag-database for wednesday)
+
+Email: test@email.com
+Password: qcu
+```
