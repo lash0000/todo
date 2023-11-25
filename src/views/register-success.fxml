@@ -24,7 +24,7 @@
                <children>
                   <ImageView fitHeight="267.0" fitWidth="271.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/party-outline.png" />
+                        <Image url="@../assets/party-outline.png" />
                      </image>
                   </ImageView>
                </children>
