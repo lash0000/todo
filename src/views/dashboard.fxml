@@ -35,9 +35,8 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/house-chimney.png" />
-                                 </image>
-                              </ImageView>
+                                    <Image url="@../resources/house-chimney.png" />
+                                 </image></ImageView>
                            </graphic>
                            <font>
                               <Font name="Segoe UI" size="18.0" />
@@ -47,9 +46,8 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/bell.png" />
-                                 </image>
-                              </ImageView>
+                                    <Image url="@../resources/bell.png" />
+                                 </image></ImageView>
                            </graphic>
                            <font>
                               <Font name="Segoe UI" size="18.0" />
@@ -75,9 +73,8 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/sliders.png" />
-                                 </image>
-                              </ImageView>
+                                    <Image url="@../resources/sliders.png" />
+                                 </image></ImageView>
                            </graphic>
                            <font>
                               <Font name="Segoe UI" size="18.0" />
@@ -90,9 +87,8 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/calendar-check.png" />
-                                 </image>
-                              </ImageView>
+                                    <Image url="@../resources/calendar-check.png" />
+                                 </image></ImageView>
                            </graphic>
                         </Button>
                      </children>
@@ -106,9 +102,8 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/user.png" />
-                                 </image>
-                              </ImageView>
+                                    <Image url="@../resources/user.png" />
+                                 </image></ImageView>
                            </graphic>
                         </Button>
                         <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Settings">
@@ -118,9 +113,8 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/gear.png" />
-                                 </image>
-                              </ImageView>
+                                    <Image url="@../resources/gear.png" />
+                                 </image></ImageView>
                            </graphic>
                         </Button>
                      </children>
@@ -272,9 +266,8 @@
                                        <children>
                                           <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../assets/science.png" />
-                                             </image>
-                                          </ImageView>
+                                                <Image url="@../resources/science.png" />
+                                             </image></ImageView>
                                           <Label text="Create a task">
                                              <font>
                                                 <Font name="Segoe UI Bold" size="16.0" />
