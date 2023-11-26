@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -136,19 +139,73 @@
                <children>
                   <VBox prefHeight="60.0" prefWidth="792.0" spacing="6.0">
                      <children>
-                        <Label text="Task Management">
-                           <font>
-                              <Font name="Segoe UI Bold" size="24.0" />
-                           </font>
-                        </Label>
-                        <Label style="-fx-text-fill: #66C2A4;" text="Manage task base on your need.">
-                           <font>
-                              <Font name="Segoe UI" size="24.0" />
-                           </font>
-                        </Label>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="64.0" prefWidth="623.0" spacing="6.0">
+                                 <children>
+                                    <Label text="Task Management">
+                                       <font>
+                                          <Font name="Segoe UI Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label style="-fx-text-fill: #66C2A4;" text="Manage task base on your need.">
+                                       <font>
+                                          <Font name="Segoe UI" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="211.0" style="-fx-background-color: #24A0ED; -fx-text-fill: white; -fx-background-radius: 999px;" text="Create new task">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/solid_plus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
-                  <VBox prefHeight="499.0" prefWidth="768.0" spacing="16.0" />
+                  <VBox prefHeight="499.0" prefWidth="768.0" spacing="16.0">
+                     <children>
+                        <Group>
+                           <children>
+                              <CheckBox mnemonicParsing="false" text="Enable the notifications">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </CheckBox>
+                              <CheckBox layoutY="38.0" mnemonicParsing="false" text="Enable the alerts and ringtones">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </CheckBox>
+                              <Label layoutY="76.0" style="-fx-text-fill: #66C2A4;" text="This are currently pending at the moment.">
+                                 <font>
+                                    <Font name="Segoe UI" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Group>
+                        <ScrollPane prefHeight="379.0" prefWidth="768.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="743.0">
+                                 <children>
+                                    <BorderPane layoutX="2.0" layoutY="3.0" prefHeight="429.0" prefWidth="732.0">
+                                       <top>
+                                          <HBox prefHeight="84.0" prefWidth="733.0" style="-fx-background-color: white; -fx-border-color: #EBEBEB; -fx-background-radius: 6px;" BorderPane.alignment="CENTER" />
+                                       </top>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children></VBox>
                </children>
                <padding>
                   <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
