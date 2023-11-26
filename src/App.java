@@ -21,7 +21,7 @@ public class App extends Application {
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
             stage.setScene(scene);
-            stage.getIcons().add(new Image("resources/qcu-logo.png"));
+            // stage.getIcons().add(new Image("resources/qcu-logo.png")) comment out kasi nagerror bobo - kenneth;
             stage.setTitle("GROUP 5 - Task Scheduler");
             stage.setResizable(false); // Window Sizing Prevention
             stage.show();
