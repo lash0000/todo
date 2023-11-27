@@ -98,7 +98,7 @@
          <bottom>
             <VBox prefHeight="111.0" prefWidth="567.0" spacing="12.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="loginButton" mnemonicParsing="false" onAction="#userLogin" prefHeight="58.0" prefWidth="567.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 6px; -fx-text-fill: white;" text="Log In">
+                  <Button mnemonicParsing="false" onAction="#userLogin" prefHeight="58.0" prefWidth="567.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 6px; -fx-text-fill: white;" text="Log In">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

@@ -1,4 +1,5 @@
-package controller;
+package views;
+
 
 
 import java.io.IOException;
@@ -27,9 +28,10 @@ public class Login {
 
         if (email.equals("test@email.com") && pwd.equals("qcu")) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("src/views/dashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("views/dashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
+                scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
                 Stage stage = (Stage) emailField.getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
