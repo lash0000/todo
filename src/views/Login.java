@@ -28,7 +28,7 @@ public class Login {
 
         if (email.equals("test@email.com") && pwd.equals("qcu")) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("views/dashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/Dashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
