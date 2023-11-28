@@ -43,7 +43,7 @@
                               <Font name="Segoe UI" size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: #EBEBEB;" text="Notifications">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Notifications">
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -83,7 +83,7 @@
                               <Font name="Segoe UI" size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="To-do">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: #EBEBEB;" text="To-do">
                            <font>
                               <Font name="Segoe UI" size="18.0" />
                            </font>
@@ -134,87 +134,21 @@
          <center>
             <VBox prefHeight="657.0" prefWidth="816.0" spacing="24.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox prefHeight="60.0" prefWidth="792.0" spacing="6.0">
+                  <VBox prefHeight="64.0" prefWidth="623.0" spacing="6.0">
                      <children>
-                        <Label text="You have 0 unread notifications!">
+                        <Label text="To-do">
                            <font>
                               <Font name="Segoe UI Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label style="-fx-text-fill: #66C2A4;" text="Be notified sometimes.">
+                        <Label style="-fx-text-fill: #66C2A4;" text="Shows the task that you should do.">
                            <font>
                               <Font name="Segoe UI" size="24.0" />
                            </font>
                         </Label>
                      </children>
                   </VBox>
-                  <VBox prefHeight="499.0" prefWidth="768.0" spacing="16.0">
-                     <children>
-                        <HBox prefHeight="65.0" prefWidth="768.0" spacing="24.0" style="-fx-border-color: EBEBEB; -fx-border-radius: 6px;">
-                           <children>
-                              <VBox prefHeight="65.0" prefWidth="653.0" spacing="6.0">
-                                 <children>
-                                    <Label text="Task submitted">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Label prefHeight="25.0" prefWidth="533.0" text="Task notification type 1 (remove it all during development)" textFill="#66c2a4">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                 </padding>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="65.0" prefWidth="768.0" spacing="24.0" style="-fx-border-color: EBEBEB; -fx-border-radius: 6px;">
-                           <children>
-                              <VBox prefHeight="65.0" prefWidth="653.0" spacing="6.0">
-                                 <children>
-                                    <Label text="Task is being overdued">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Label prefHeight="25.0" prefWidth="533.0" text="Task notification type 2" textFill="#66c2a4">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                 </padding>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="65.0" prefWidth="768.0" spacing="24.0" style="-fx-border-color: EBEBEB; -fx-border-radius: 6px;">
-                           <children>
-                              <VBox prefHeight="65.0" prefWidth="653.0" spacing="6.0">
-                                 <children>
-                                    <Label text="Task is being due tomorrow">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <Label prefHeight="25.0" prefWidth="533.0" text="Task notification type 3" textFill="#66c2a4">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                 </padding>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
+                  <VBox prefHeight="499.0" prefWidth="768.0" spacing="16.0" />
                </children>
                <padding>
                   <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />

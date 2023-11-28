@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="54.0" layoutY="49.0" prefHeight="542.0" prefWidth="950.0">
+         <left>
+            <VBox prefHeight="542.0" prefWidth="474.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane prefHeight="548.0" prefWidth="474.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="847.0" prefWidth="455.0" style="-fx-border-color: transparent; -fx-background-color: transparent;">
+                           <children>
+                              <BorderPane layoutX="1.0" layoutY="3.0" prefHeight="821.0" prefWidth="454.0" style="-fx-border-color: transparent; -fx-background-color: transparent;">
+                                 <top>
+                                    <VBox prefHeight="827.0" prefWidth="452.0" spacing="12.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <VBox spacing="4.0">
+                                             <children>
+                                                <Label text="Create a new task">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label style="-fx-text-fill: #66C2A4;" text="Provide the information that you want to work at">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="4.0">
+                                             <children>
+                                                <Label text="Task Name">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField prefHeight="46.0" prefWidth="452.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="4.0">
+                                             <children>
+                                                <Label text="Start Date">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <DatePicker prefHeight="46.0" prefWidth="454.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="4.0">
+                                             <children>
+                                                <Label text="End Date">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <DatePicker prefHeight="46.0" prefWidth="454.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="4.0">
+                                             <children>
+                                                <Label text="Time (e.g: 6:00 AM)">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField prefHeight="46.0" prefWidth="452.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="179.0" prefWidth="452.0" spacing="4.0">
+                                             <children>
+                                                <Label text="Task Description">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField prefHeight="150.0" prefWidth="452.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="84.0" prefWidth="452.0" spacing="4.0">
+                                             <children>
+                                                <Label text="Task Priority">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox prefHeight="46.0" prefWidth="460.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="70.0" prefWidth="452.0" spacing="4.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#userLogin" prefHeight="58.0" prefWidth="567.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 6px; -fx-text-fill: white;" text="Add new task">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox prefHeight="542.0" prefWidth="451.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="256.0" prefWidth="471.0" spacing="6.0" style="-fx-border-color: #66C2A4; -fx-border-radius: 6px;">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="122.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/team-success-outline.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Not sure for it?">
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label style="-fx-text-fill: #66C2A4;" text="You may proceed to cancel anytime.">
+                           <font>
+                              <Font name="Segoe UI" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#userLogin" prefHeight="58.0" prefWidth="567.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 6px; -fx-text-fill: white;" text="Cancel">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>

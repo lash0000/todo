@@ -38,7 +38,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/house-chimney.png" />
+                                    <Image url="@img/house-chimney.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -50,7 +50,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/bell.png" />
+                                    <Image url="@img/bell.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -78,7 +78,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/sliders.png" />
+                                    <Image url="@img/sliders.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -93,7 +93,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/calendar-check.png" />
+                                    <Image url="@img/calendar-check.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -109,7 +109,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/user.png" />
+                                    <Image url="@img/user.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -121,7 +121,7 @@
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/gear.png" />
+                                    <Image url="@img/gear.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -162,7 +162,7 @@
                                  <graphic>
                                     <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/solid_plus.png" />
+                                          <Image url="@img/solid_plus.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
