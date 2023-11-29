@@ -30,12 +30,12 @@
                                        <children>
                                           <VBox spacing="4.0">
                                              <children>
-                                                <Label text="Create a new task">
+                                                <Label text="Edit specific task">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label style="-fx-text-fill: #66C2A4;" text="Provide the information that you want to work at">
+                                                <Label style="-fx-text-fill: #66C2A4;" text="Provide the specific objective.">
                                                    <font>
                                                       <Font size="20.0" />
                                                    </font>

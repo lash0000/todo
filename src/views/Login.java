@@ -4,6 +4,7 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,34 +12,107 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Login {
+
+   
+
     @FXML
-    private TextField emailField;
+    private Button registerButton;
 
     @FXML
     private PasswordField keyField;
 
     @FXML
-    private void userLogin(ActionEvent event) throws IOException {
-        String email = emailField.getText();
-        String pwd = keyField.getText();
+    private TextField usernameField;
 
-        if (email.equals("test@email.com") && pwd.equals("qcu")) {
+  
+
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+
+    @FXML
+    private void handleLogin(ActionEvent event) {
+        String username = usernameField.getText();
+        String password = keyField.getText();
+    
+        if (authenticateUser(username, password)) {
+            showAlert("Login Successful!");
+    
+            // Load the dashboard scene
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/Dashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/dashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
-                scene.getStylesheets().add(getClass().getResource("/main.css").toExternalForm());
-                Stage stage = (Stage) emailField.getScene().getWindow();
+    
+                // Get the stage from the action event
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException e) {
-                System.out.println("nonneee");
                 e.printStackTrace();
+                showAlert("Error loading dashboard.");
             }
         } else {
-            System.out.println("Wrong credentials!");
+            showAlert("Invalid username or password. Please try again.");
         }
     }
+    
+
+    private boolean authenticateUser(String email, String password) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/task_scheduler", "root", "")) {
+            String query = "SELECT * FROM login WHERE username = ? AND password = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, password);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    return resultSet.next(); // If the result set has at least one row, the credentials are valid
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert("Error authenticating user.");
+            return false;
+        }
+    }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Login Result");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+    
+    public void goToRegistration(ActionEvent event) throws IOException{
+
+        Parent root = FXMLLoader.load(getClass().getResource("resources/RegPt1.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+       
+    }
+
+    
+
+   
+
+
+
+    
+
 }

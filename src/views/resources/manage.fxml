@@ -6,6 +6,8 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.dashController">
    <children>
       <BorderPane layoutX="-1.0" layoutY="-1.0" prefHeight="640.0" prefWidth="1056.0" style="-fx-background-color: #fdfdfd;">
          <left>
@@ -34,7 +36,7 @@
                   </HBox>
                   <VBox prefHeight="89.0" prefWidth="224.0" spacing="6.0">
                      <children>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Dashboard">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Dashboard">
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -46,7 +48,7 @@
                               <Font name="Segoe UI" size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Notifications">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToNotif" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Notifications">
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -74,7 +76,7 @@
                   </HBox>
                   <VBox prefHeight="359.0" prefWidth="224.0" spacing="6.0">
                      <children>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: #EBEBEB;" text="Manage">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToManage" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: #EBEBEB;" text="Manage">
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -86,7 +88,7 @@
                               <Font name="Segoe UI" size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="To-do">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToTodo" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="To-do">
                            <font>
                               <Font name="Segoe UI" size="18.0" />
                            </font>
@@ -155,7 +157,7 @@
                                     </Label>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="211.0" style="-fx-background-color: #24A0ED; -fx-text-fill: white; -fx-background-radius: 999px;" text="Create new task">
+                              <Button mnemonicParsing="false" onAction="#switchToAddTask" prefHeight="54.0" prefWidth="211.0" style="-fx-background-color: #24A0ED; -fx-text-fill: white; -fx-background-radius: 999px;" text="Create new task">
                                  <font>
                                     <Font name="Segoe UI" size="16.0" />
                                  </font>
@@ -193,63 +195,17 @@
                            </children>
                         </Group>
                         <ScrollPane prefHeight="379.0" prefWidth="768.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="743.0">
-                                 <children>
-                                    <BorderPane layoutX="2.0" layoutY="3.0" prefHeight="429.0" prefWidth="732.0">
-                                       <top>
-                                          <HBox prefHeight="84.0" prefWidth="739.0" style="-fx-background-color: white; -fx-border-color: #EBEBEB; -fx-background-radius: 6px;" BorderPane.alignment="CENTER">
-                                             <padding>
-                                                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-                                             </padding>
-                                             <children>
-                                                <VBox prefHeight="58.0" prefWidth="526.0" spacing="6.0">
-                                                   <children>
-                                                      <Label text="Test Task #1">
-                                                         <font>
-                                                            <Font name="Segoe UI" size="20.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Label text="Due &lt;Date&gt;, &lt;time&gt;" textFill="#66c2a4">
-                                                         <font>
-                                                            <Font name="Segoe UI" size="20.0" />
-                                                         </font>
-                                                      </Label>
-                                                   </children>
-                                                </VBox>
-                                                <HBox alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="321.0" spacing="12.0">
-                                                   <children>
-                                                      <Label text="Task Level">
-                                                         <font>
-                                                            <Font name="Segoe UI" size="20.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="67.0">
-                                                         <graphic>
-                                                            <ImageView fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@img/trash.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                      <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="67.0">
-                                                         <graphic>
-                                                            <ImageView fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                                               <image>
-                                                                  <Image url="@img/ellipsis.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                   </children>
-                                                </HBox>
-                                             </children></HBox>
-                                       </top>
-                                    </BorderPane>
-                                 </children>
-                              </AnchorPane>
-                          </content>
+                           <content>
+                              <TableView fx:id="tableViewList" prefHeight="376.0" prefWidth="764.0">
+                                <columns>
+                                  <TableColumn fx:id="columnName" prefWidth="170.0" text="Task Name" />
+                                    <TableColumn fx:id="columnDescription" prefWidth="300.0" text="Task Description" />
+                                    <TableColumn fx:id="columnPriority" minWidth="0.0" prefWidth="79.0" text="Priority Level" />
+                                    <TableColumn fx:id="columnEdit" prefWidth="100.0" text="Edit" />
+                                    <TableColumn fx:id="columnDelete" prefWidth="100.0" text="Delete" />
+                                </columns>
+                              </TableView>
+                           </content>
                         </ScrollPane>
                      </children></VBox>
                </children>

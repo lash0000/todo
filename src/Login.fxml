@@ -50,7 +50,7 @@
                         <Insets bottom="12.0" />
                      </padding>
                   </Label>
-                  <TextField fx:id="emailField" prefHeight="48.0" prefWidth="535.0" promptText="test@email.ph">
+                  <TextField fx:id="usernameField" prefHeight="48.0" prefWidth="535.0" promptText="test@email.ph">
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
@@ -98,7 +98,7 @@
          <bottom>
             <VBox prefHeight="111.0" prefWidth="567.0" spacing="12.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#userLogin" prefHeight="58.0" prefWidth="567.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 6px; -fx-text-fill: white;" text="Log In">
+                  <Button fx:id="loginField" mnemonicParsing="false" onAction="#handleLogin" prefHeight="58.0" prefWidth="567.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 6px; -fx-text-fill: white;" text="Log In">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -110,11 +110,11 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label text="Register" textFill="#24a0ed">
+                        <Button mnemonicParsing="false" onAction="#goToRegistration" style="-fx-background-color: white;" text="Register" textFill="#24a0ed">
                            <font>
-                              <Font size="20.0" />
+                              <Font size="15.0" />
                            </font>
-                        </Label>
+                        </Button>
                      </children>
                   </HBox>
                </children>
