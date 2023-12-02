@@ -3,7 +3,6 @@ package views;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Task {
-  
     private SimpleStringProperty name;
     private SimpleStringProperty description;
     private SimpleStringProperty priority;

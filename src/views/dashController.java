@@ -40,7 +40,6 @@ import javafx.scene.control.TableCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-
 public class dashController {
 
     @FXML
@@ -80,9 +79,9 @@ public class dashController {
     private TableColumn<Task, String> columnPriority;
 
     @FXML
-private TableColumn<Task, Void> columnEdit;
-@FXML
-private TableColumn<Task, Void> columnDelete;
+    private TableColumn<Task, Void> columnEdit;
+    @FXML
+    private TableColumn<Task, Void> columnDelete;
 
     private ObservableList<Task> taskList;
 
@@ -92,134 +91,135 @@ private TableColumn<Task, Void> columnDelete;
     @FXML
     private VBox VBox1;
 
+    @FXML
+    private TextField usernameField;
 
-    
+    @FXML
+    private Button label2;
+
+    @FXML
+    private Label welcome;
+
+    @FXML
+    private Button labelUser;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
-
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/task_scheduler";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
 
     @FXML
-private void initialize() {
-    
-    
-    // Check if tableViewList and columns are injected
-    if (tableViewList != null && columnName != null && columnDescription != null &&
-            columnPriority != null && columnEdit != null && columnDelete != null) {
+    private void initialize() {
 
-       
-               
+        // Check if tableViewList and columns are injected
+        if (tableViewList != null && columnName != null && columnDescription != null &&
+                columnPriority != null && columnEdit != null && columnDelete != null) {
 
-        // Initialize other columns (name, description, priority)
-        columnName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        columnDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
-        columnPriority.setCellValueFactory(new PropertyValueFactory<>("priority"));
+            // Initialize other columns (name, description, priority)
+            columnName.setCellValueFactory(new PropertyValueFactory<>("name"));
+            columnDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+            columnPriority.setCellValueFactory(new PropertyValueFactory<>("priority"));
 
-        columnEdit.setCellFactory(param -> new TableCell<Task, Void>() {
-            private final Button editButton = new Button("Edit");
+            columnEdit.setCellFactory(param -> new TableCell<Task, Void>() {
+                private final Button editButton = new Button("Edit");
 
-            {
-                editButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
-                editButton.setMaxWidth(Double.MAX_VALUE);
+                {
+                    editButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
+                    editButton.setMaxWidth(Double.MAX_VALUE);
 
-                // Set the click event for the edit button
-                editButton.setOnAction(event -> {
-                    Task task = getTableView().getItems().get(getIndex());
-                    // Add your edit logic here
-                    System.out.println("Edit clicked for task: " + task.getName());
-                });
-            }
-
-            @Override
-            protected void updateItem(Void item, boolean empty) {
-                super.updateItem(item, empty);
-                if (empty) {
-                    setGraphic(null);
-                } else {
-                    setGraphic(editButton);
+                    // Set the click event for the edit button
+                    editButton.setOnAction(event -> {
+                        Task task = getTableView().getItems().get(getIndex());
+                        // Add your edit logic here
+                        System.out.println("Edit clicked for task: " + task.getName());
+                    });
                 }
-            }
-        });
 
-        // Initialize delete column
-        columnDelete.setCellFactory(param -> new TableCell<Task, Void>() {
-            private final Button deleteButton = new Button("Delete");
-
-            {
-                deleteButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
-                deleteButton.setMaxWidth(Double.MAX_VALUE);
-
-                // Set the click event for the delete button
-                deleteButton.setOnAction(event -> {
-                    Task task = getTableView().getItems().get(getIndex());
-                    // Add your delete logic here
-                    deleteTask(task);
-                });
-            }
-
-            @Override
-            protected void updateItem(Void item, boolean empty) {
-                super.updateItem(item, empty);
-                if (empty) {
-                    setGraphic(null);
-                } else {
-                    setGraphic(deleteButton);
+                @Override
+                protected void updateItem(Void item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty) {
+                        setGraphic(null);
+                    } else {
+                        setGraphic(editButton);
+                    }
                 }
-            }
-        });
+            });
 
+            // Initialize delete column
+            columnDelete.setCellFactory(param -> new TableCell<Task, Void>() {
+                private final Button deleteButton = new Button("Delete");
 
-        // Initialize your observable list
-        taskList = FXCollections.observableArrayList();
+                {
+                    deleteButton.setStyle("-fx-background-color: blue; -fx-text-fill: white;");
+                    deleteButton.setMaxWidth(Double.MAX_VALUE);
 
-        // Set the items to your TableView
-        tableViewList.setItems(taskList);
+                    // Set the click event for the delete button
+                    deleteButton.setOnAction(event -> {
+                        Task task = getTableView().getItems().get(getIndex());
+                        // Add your delete logic here
+                        deleteTask(task);
+                    });
+                }
 
-        // Retrieve data from the database and add it to the list
-        retrieveDataFromDatabase();
-    } else {
-        System.err.println("Error: TableView or its columns not injected properly.");
-    }
-}
+                @Override
+                protected void updateItem(Void item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty) {
+                        setGraphic(null);
+                    } else {
+                        setGraphic(deleteButton);
+                    }
+                }
+            });
 
-// Other methods...
+            // Initialize your observable list
+            taskList = FXCollections.observableArrayList();
 
-private void deleteTask(Task task) {
-    try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-        String query = "DELETE FROM tasks WHERE task_name = ?";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setString(1, task.getName());
+            // Set the items to your TableView
+            tableViewList.setItems(taskList);
 
-            int affectedRows = preparedStatement.executeUpdate();
-
-            if (affectedRows > 0) {
-                // If the deletion was successful, remove the task from the list and update the TableView
-                taskList.remove(task);
-                tableViewList.refresh(); // Refresh the TableView to reflect the changes
-            } else {
-                // Handle the case where the deletion was not successful
-                System.out.println("Error deleting task from the database.");
-            }
+            // Retrieve data from the database and add it to the list
+            retrieveDataFromDatabase();
+        } else {
+            System.err.println("Error: TableView or its columns not injected properly.");
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
-        // Handle the SQL exception, show an error message, log, etc.
     }
-}
 
+    // Other methods...
 
+    private void deleteTask(Task task) {
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+            String query = "DELETE FROM tasks WHERE task_name = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, task.getName());
 
+                int affectedRows = preparedStatement.executeUpdate();
+
+                if (affectedRows > 0) {
+                    // If the deletion was successful, remove the task from the list and update the
+                    // TableView
+                    taskList.remove(task);
+                    tableViewList.refresh(); // Refresh the TableView to reflect the changes
+                } else {
+                    // Handle the case where the deletion was not successful
+                    System.out.println("Error deleting task from the database.");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle the SQL exception, show an error message, log, etc.
+        }
+    }
 
     private void retrieveDataFromDatabase() {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String query = "SELECT task_name, task_description, task_priority FROM tasks";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-                 ResultSet resultSet = preparedStatement.executeQuery()) {
+                    ResultSet resultSet = preparedStatement.executeQuery()) {
 
                 while (resultSet.next()) {
                     String name = resultSet.getString("task_name");
@@ -236,90 +236,77 @@ private void deleteTask(Task task) {
         }
     }
 
-
-
-
-    
-
     @FXML
-private void addTask(ActionEvent event) throws IOException{
-    try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-        String query = "INSERT INTO tasks (start_date, end_date, task_name, task_description, task_priority, task_time) VALUES (?, ?, ?, ?, ?, ?)";
-        
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
-            preparedStatement.setDate(1, java.sql.Date.valueOf(startDateField.getValue()));
-            preparedStatement.setDate(2, java.sql.Date.valueOf(endDateField.getValue()));
-            preparedStatement.setString(3, taskNameField.getText());
-            preparedStatement.setString(4, taskDescriptionField.getText());
-            preparedStatement.setString(5, taskPriorityField.getText());
-            preparedStatement.setString(6, timeField.getText());
+    private void addTask(ActionEvent event) throws IOException {
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+            String query = "INSERT INTO tasks (start_date, end_date, task_name, task_description, task_priority, task_time) VALUES (?, ?, ?, ?, ?, ?)";
 
-            int affectedRows = preparedStatement.executeUpdate();
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query,
+                    PreparedStatement.RETURN_GENERATED_KEYS)) {
+                preparedStatement.setDate(1, java.sql.Date.valueOf(startDateField.getValue()));
+                preparedStatement.setDate(2, java.sql.Date.valueOf(endDateField.getValue()));
+                preparedStatement.setString(3, taskNameField.getText());
+                preparedStatement.setString(4, taskDescriptionField.getText());
+                preparedStatement.setString(5, taskPriorityField.getText());
+                preparedStatement.setString(6, timeField.getText());
 
-            Parent root = FXMLLoader.load(getClass().getResource("resources/manage.fxml"));
-stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-scene = new Scene(root);
-stage.setScene(scene);
-stage.show();
+                int affectedRows = preparedStatement.executeUpdate();
 
-    
+                Parent root = FXMLLoader.load(getClass().getResource("resources/manage.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle the SQL exception, show an error message, log, etc.
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
-        // Handle the SQL exception, show an error message, log, etc.
     }
-}
 
-
-
-
-
-    
-
-
-
-
-
-    public void switchToDashboard(ActionEvent event) throws IOException{
+    public void switchToDashboard(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/dashboard.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void switchToNotif(ActionEvent event) throws IOException{
+    public void switchToNotif(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/notifications.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-     public void switchToManage(ActionEvent event) throws IOException{
+    public void switchToManage(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/manage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-     public void switchToTodo(ActionEvent event) throws IOException{
+    public void switchToTodo(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/to-do.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void switchToAddTask(ActionEvent event) throws IOException{
+    public void switchToAddTask(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/AddTask.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-   
-    
+    public void setUsername(String username) {
+        labelUser.setText("test: " + username);
+    }
+
 }

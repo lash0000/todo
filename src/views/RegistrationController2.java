@@ -35,9 +35,6 @@ public class RegistrationController2 {
     private TextField confirmEmailField;
 
     @FXML
-    private Button proceedButton;
-
-    @FXML
     private Button registerButton;
 
     private Stage stage;
@@ -54,23 +51,6 @@ public class RegistrationController2 {
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
   
-
-        String email = emailField.getText();    
-        String confirmEmail = confirmEmailField.getText();
-    
-        if (email.isEmpty() || confirmEmail.isEmpty()) {
-            showAlert("Please enter both email and confirm email.");
-            return;
-        }
-    
-        if (!email.equals(confirmEmail)) {
-            showAlert("Emails do not match. Please enter the same email in both fields.");
-            return;
-        }
-    
-        // Store the email for use in Scene 2
-        userEmail = email;
-    
 
         if (password.isEmpty() || confirmPassword.isEmpty()) {
             showAlert("Please enter both password and confirm password.");
@@ -96,8 +76,7 @@ public class RegistrationController2 {
             showAlert("Error registering user. Please try again.");
         }
         
-
-         Parent root = FXMLLoader.load(getClass().getResource("resources/RegSuccess.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("resources/RegSuccess.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
