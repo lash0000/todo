@@ -282,7 +282,7 @@
                                     </VBox>
                                  </children>
                               </HBox>
-                              <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="286.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 2px; -fx-text-fill: white;" text="Log In">
+                              <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="286.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 2px; -fx-text-fill: white;" text="Create Task">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>

@@ -100,9 +100,6 @@ public class dashController {
     @FXML
     private Label welcome;
 
-    @FXML
-    private Button labelUser;
-
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -113,7 +110,6 @@ public class dashController {
 
     @FXML
     private void initialize() {
-
         // Check if tableViewList and columns are injected
         if (tableViewList != null && columnName != null && columnDescription != null &&
                 columnPriority != null && columnEdit != null && columnDelete != null) {
@@ -187,6 +183,8 @@ public class dashController {
         } else {
             System.err.println("Error: TableView or its columns not injected properly.");
         }
+
+        retrieveUsername("");
     }
 
     // Other methods...
@@ -211,7 +209,6 @@ public class dashController {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle the SQL exception, show an error message, log, etc.
         }
     }
 
@@ -232,7 +229,6 @@ public class dashController {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle the SQL exception, show an error message, log, etc.
         }
     }
 
@@ -242,7 +238,7 @@ public class dashController {
             String query = "INSERT INTO tasks (start_date, end_date, task_name, task_description, task_priority, task_time) VALUES (?, ?, ?, ?, ?, ?)";
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(query,
-                    PreparedStatement.RETURN_GENERATED_KEYS)) {
+                PreparedStatement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setDate(1, java.sql.Date.valueOf(startDateField.getValue()));
                 preparedStatement.setDate(2, java.sql.Date.valueOf(endDateField.getValue()));
                 preparedStatement.setString(3, taskNameField.getText());
@@ -261,9 +257,33 @@ public class dashController {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle the SQL exception, show an error message, log, etc.
         }
     }
+
+    // retrive to display value shit
+
+    private void retrieveUsername(String username) {
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+            String query = "SELECT username FROM login";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, username);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        String fullName = resultSet.getString("full_name");
+                        // Set the retrieved value to your UI components
+                        label2.setText("stfu, " + fullName);
+                        welcome.setText("Welcome, " + fullName + "!");
+                    } else {
+                        System.out.println("No user found with the username: " + username);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // switching scenes
 
     public void switchToDashboard(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/dashboard.fxml"));
@@ -303,10 +323,6 @@ public class dashController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    public void setUsername(String username) {
-        labelUser.setText("test: " + username);
     }
 
 }
