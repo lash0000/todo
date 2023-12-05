@@ -32,6 +32,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
@@ -109,8 +110,6 @@ public class dashController {
 
     @FXML
     private void initialize() {
-
-        // Check if tableViewList and columns are injected
         if (tableViewList != null && columnName != null && columnDescription != null &&
                 columnPriority != null && columnEdit != null && columnDelete != null) {
 
@@ -130,7 +129,7 @@ public class dashController {
                     editButton.setOnAction(event -> {
                         Task task = getTableView().getItems().get(getIndex());
                         // Add your edit logic here
-                        System.out.println("Edit clicked for task: " + task.getName());
+                        openEditTaskDialog(event, task);
                     });
                 }
 
@@ -186,6 +185,36 @@ public class dashController {
     }
 
     // Other methods...
+
+    private void openEditTaskDialog(ActionEvent event, Task task) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/EditTask.fxml"));
+            Parent root = loader.load();
+
+            EditTaskController editTaskController = loader.getController();
+            editTaskController.setTaskToEdit(task);
+
+            Stage editStage = new Stage();
+            editStage.setTitle("Edit Task");
+            editStage.setScene(new Scene(root));
+
+            // Pass the dialog stage to the controller
+            editTaskController.setDialogStage(editStage);
+
+            editStage.initModality(Modality.WINDOW_MODAL);
+            editStage.initOwner(((Node) event.getSource()).getScene().getWindow());
+            editStage.showAndWait();
+
+            // Refresh the TableView after the EditTask dialog is closed (if needed)
+            // You can call retrieveDataFromDatabase() or update the existing data
+            // taskList.clear();
+            // retrieveDataFromDatabase();
+            // tableViewList.refresh();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the IOException
+        }
+    }
 
     private void deleteTask(Task task) {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
@@ -265,7 +294,7 @@ public class dashController {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Exit Application");
         alert.setHeaderText("Quit application?");
-        
+
         alert.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
                 Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
@@ -274,7 +303,7 @@ public class dashController {
         });
     }
 
-    //function
+    // function
 
     public void switchToDashboard(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/dashboard.fxml"));
