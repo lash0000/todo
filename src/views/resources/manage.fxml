@@ -104,18 +104,6 @@
                   </VBox>
                   <VBox prefHeight="89.0" prefWidth="224.0" spacing="6.0">
                      <children>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="&lt;string&gt;">
-                           <font>
-                              <Font name="Segoe UI" size="18.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/user.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
                         <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Settings">
                            <font>
                               <Font name="Segoe UI" size="18.0" />
@@ -127,6 +115,11 @@
                                  </image>
                               </ImageView>
                            </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Exit">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
                         </Button>
                      </children>
                   </VBox>

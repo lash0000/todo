@@ -23,6 +23,7 @@ public class App extends Application {
             AnchorPane root = (AnchorPane) loader.load(fxmlStream);
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
+            stage.setScene(scene);
             // stage.getIcons().add(new Image("resources/qcu-logo.png"));
             stage.setTitle("GROUP 5 - Task Scheduler");
             stage.setResizable(false); // Window Sizing Prevention
@@ -31,6 +32,5 @@ public class App extends Application {
             System.err.println("Failed to load FXML file: " + e.getMessage());
         }
     }
-
 
 }

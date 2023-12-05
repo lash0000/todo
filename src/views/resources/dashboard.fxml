@@ -95,17 +95,6 @@
                   </VBox>
                   <VBox prefHeight="89.0" prefWidth="224.0" spacing="6.0">
                      <children>
-                        <Button fx:id="label2" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="&lt;string&gt;">
-                           <font>
-                              <Font name="Segoe UI" size="18.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/user.png" />
-                                 </image></ImageView>
-                           </graphic>
-                        </Button>
                         <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Settings">
                            <font>
                               <Font name="Segoe UI" size="18.0" />
@@ -116,6 +105,11 @@
                                     <Image url="@img/gear.png" />
                                  </image></ImageView>
                            </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Exit">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
                         </Button>
                      </children>
                   </VBox>
@@ -282,7 +276,7 @@
                                     </VBox>
                                  </children>
                               </HBox>
-                              <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="286.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 2px; -fx-text-fill: white;" text="Create Task">
+                              <Button mnemonicParsing="false" onAction="#createTask" prefHeight="46.0" prefWidth="286.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 2px; -fx-text-fill: white;" text="Create a task.">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
