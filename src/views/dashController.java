@@ -17,9 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -28,22 +26,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Node;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.TableCell;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 public class dashController {
+
+    @FXML
+    private Label compTask;
 
     @FXML
     private Button addTaskBtn;
@@ -59,9 +51,6 @@ public class dashController {
 
     @FXML
     private TextField taskNameField;
-
-    @FXML
-    private Label taskPriorityField;
 
     @FXML
     private TextField timeField;
@@ -82,6 +71,9 @@ public class dashController {
     private TableColumn<Task, String> columnPriority;
 
     @FXML
+    private ObservableList<Task2> taskList2;
+
+    @FXML
     private TableColumn<Task, Void> columnEdit;
     @FXML
     private TableColumn<Task, Void> columnDelete;
@@ -98,7 +90,19 @@ public class dashController {
     private TextField usernameField;
 
     @FXML
+    private Button label2;
+
+    @FXML
     private Label welcome;
+
+    @FXML
+    private TextField taskPriorityField;
+
+    //for Todo tab
+    @FXML
+    private TableView<Task2> tableViewList2;
+
+    //provide for todo tab
 
     private Stage stage;
     private Scene scene;
@@ -129,7 +133,7 @@ public class dashController {
                     editButton.setOnAction(event -> {
                         Task task = getTableView().getItems().get(getIndex());
                         // Add your edit logic here
-                        openEditTaskDialog(event, task);
+                        System.out.println("Edit clicked for task: " + task.getName());
                     });
                 }
 
@@ -182,39 +186,10 @@ public class dashController {
         } else {
             System.err.println("Error: TableView or its columns not injected properly.");
         }
+
     }
 
     // Other methods...
-
-    private void openEditTaskDialog(ActionEvent event, Task task) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/EditTask.fxml"));
-            Parent root = loader.load();
-
-            EditTaskController editTaskController = loader.getController();
-            editTaskController.setTaskToEdit(task);
-
-            Stage editStage = new Stage();
-            editStage.setTitle("Edit Task");
-            editStage.setScene(new Scene(root));
-
-            // Pass the dialog stage to the controller
-            editTaskController.setDialogStage(editStage);
-
-            editStage.initModality(Modality.WINDOW_MODAL);
-            editStage.initOwner(((Node) event.getSource()).getScene().getWindow());
-            editStage.showAndWait();
-
-            // Refresh the TableView after the EditTask dialog is closed (if needed)
-            // You can call retrieveDataFromDatabase() or update the existing data
-            // taskList.clear();
-            // retrieveDataFromDatabase();
-            // tableViewList.refresh();
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Handle the IOException
-        }
-    }
 
     private void deleteTask(Task task) {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
@@ -286,24 +261,9 @@ public class dashController {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            // Handle the SQL exception, show an error message, log, etc.
         }
     }
-
-    @FXML
-    private void logOut(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Exit Application");
-        alert.setHeaderText("Quit application?");
-
-        alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK) {
-                Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-                stage.close();
-            }
-        });
-    }
-
-    // function
 
     public void switchToDashboard(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/dashboard.fxml"));
@@ -338,14 +298,6 @@ public class dashController {
     }
 
     public void switchToAddTask(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("resources/AddTask.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void createTask(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("resources/AddTask.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

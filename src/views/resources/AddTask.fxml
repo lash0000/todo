@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -94,14 +93,12 @@
                                           </VBox>
                                           <VBox fx:id="VBox1" prefHeight="84.0" prefWidth="452.0" spacing="4.0">
                                              <children>
-                                                <Label fx:id="taskPriorityField" text="Task Priority">
-                                 
+                                                <Label text="Priority Level">
                                                    <font>
                                                       <Font size="20.0" />
                                                    </font>
                                                 </Label>
-                                              
-                                                <ComboBox prefHeight="46.0" prefWidth="460.0" />
+                                                <TextField fx:id="taskPriorityField" prefHeight="46.0" prefWidth="452.0" promptText="Options: High, Medium, Low" />
                                              </children>
                                           </VBox>
                                           <VBox prefHeight="70.0" prefWidth="452.0" spacing="4.0">

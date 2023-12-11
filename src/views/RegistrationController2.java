@@ -76,7 +76,8 @@ public class RegistrationController2 {
             showAlert("Error registering user. Please try again.");
         }
         
-        Parent root = FXMLLoader.load(getClass().getResource("resources/RegSuccess.fxml"));
+
+         Parent root = FXMLLoader.load(getClass().getResource("resources/RegSuccess.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
