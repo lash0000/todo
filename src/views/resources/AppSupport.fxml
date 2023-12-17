@@ -3,10 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.todoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.settingsController">
    <children>
       <BorderPane layoutX="-1.0" layoutY="-1.0" prefHeight="640.0" prefWidth="1056.0" style="-fx-background-color: #fdfdfd;">
          <left>
@@ -47,7 +43,7 @@
                               <Font name="Segoe UI" size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: #EBEBEB;" text="To-do">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="To-do">
                            <font>
                               <Font name="Segoe UI" size="18.0" />
                            </font>
@@ -103,7 +99,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchSetting" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Settings">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: #EBEBEB;" text="Settings">
                            <font>
                               <Font name="Segoe UI" size="18.0" />
                            </font>
@@ -124,16 +120,16 @@
             </VBox>
          </left>
          <center>
-            <VBox prefHeight="657.0" prefWidth="816.0" spacing="24.0" style="-fx-background-color: ;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="657.0" prefWidth="816.0" spacing="24.0" BorderPane.alignment="CENTER">
                <children>
                   <VBox prefHeight="64.0" prefWidth="623.0" spacing="6.0">
                      <children>
-                        <Label text="To-do">
+                        <Label text="Account Settings">
                            <font>
                               <Font name="Segoe UI Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label style="-fx-text-fill: #66C2A4;" text="Shows the task that you should do.">
+                        <Label style="-fx-text-fill: #66C2A4;" text="Customize your personal detals.">
                            <font>
                               <Font name="Segoe UI" size="24.0" />
                            </font>
@@ -142,93 +138,76 @@
                   </VBox>
                   <HBox prefHeight="54.0" prefWidth="768.0" spacing="12.0">
                      <children>
-                        <Button fx:id="taskPendingBtn" mnemonicParsing="false" onAction="#handlePendingButton" prefHeight="54.0" prefWidth="121.0" text="Task Pending">
+                        <Button mnemonicParsing="false" onAction="#switchSetting" prefHeight="54.0" prefWidth="178.0" style="-fx-background-color: transparent;" text="Personal Information">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Button>
-                        <Button fx:id="taskOverduedBtn" mnemonicParsing="false" onAction="#handleOverduedButton" prefHeight="54.0" prefWidth="137.0" text="Task Overdued">
+                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="137.0" text="App Support">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#switchAppInfo" prefHeight="54.0" prefWidth="165.0" style="-fx-background-color: transparent;" text="App Information">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Button>
                      </children>
                   </HBox>
-                  <HBox prefHeight="353.0" prefWidth="768.0" spacing="12.0">
+                  <HBox prefHeight="426.0" prefWidth="768.0" spacing="12.0">
                      <children>
-                        <VBox prefHeight="353.0" prefWidth="521.0">
+                        <VBox prefHeight="377.0" prefWidth="413.0" spacing="12.0">
                            <children>
-                              <TableView fx:id="tableViewList2" prefHeight="352.0" prefWidth="441.0">
-                                <columns>
-                                  <TableColumn fx:id="column_Name" prefWidth="120.0" text="Name" />
-                                  <TableColumn fx:id="columnStartDate" prefWidth="100.0" text="Start Date" />
-                                    <TableColumn fx:id="columnEndDate" prefWidth="100.0" text="End Date" />
-                                    <TableColumn fx:id="columnPriorityLevel" prefWidth="100.0" text="Priority Level" />
-                                    <TableColumn fx:id="columnDone" prefWidth="100.0" text="Done" />
-                                </columns>
-                              </TableView>
+                              <VBox prefHeight="128.0" prefWidth="398.0" spacing="4.0" style="-fx-border-color: #EBEBEB; -fx-border-radius: 4px;">
+                                 <children>
+                                    <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label text="Documentation">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Get to know on about task scheduler.">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" prefHeight="88.0" prefWidth="372.0" text="Read More">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                 </padding>
+                              </VBox>
                            </children>
                         </VBox>
-                        <VBox prefHeight="353.0" prefWidth="235.0" spacing="12.0">
+                        <VBox prefHeight="353.0" prefWidth="372.0">
                            <children>
-                              <VBox spacing="6.0">
+                              <VBox prefHeight="128.0" prefWidth="398.0" spacing="4.0" style="-fx-border-color: #EBEBEB; -fx-border-radius: 4px;">
                                  <children>
-                                    <Label text="Task Levels (Category)">
+                                    <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label text="User's Manual">
                                        <font>
-                                          <Font name="Segoe UI Bold" size="16.0" />
+                                          <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label text="Set by user.">
+                                    <Label text="Our simple guide towards functionality.">
                                        <font>
-                                          <Font name="Segoe UI" size="16.0" />
+                                          <Font size="16.0" />
                                        </font>
                                     </Label>
+                                    <Button mnemonicParsing="false" prefHeight="88.0" prefWidth="372.0" text="Read More">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
                                  </children>
-                              </VBox>
-                              <VBox spacing="12.0">
-                                 <children>
-                                    <RadioButton fx:id="lowRad" mnemonicParsing="false" onAction="#handleRadioButton" text="Low">
-                                       <font>
-                                          <Font name="Segoe UI" size="16.0" />
-                                       </font>
-                                       <toggleGroup>
-                                          <ToggleGroup fx:id="priority" />
-                                       </toggleGroup>
-                                    </RadioButton>
-                                    <Label text="This task is not necessary.">
-                                       <font>
-                                          <Font name="Segoe UI" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                              <VBox spacing="12.0">
-                                 <children>
-                                    <RadioButton fx:id="mediumRad" mnemonicParsing="false" onAction="#handleRadioButton" text="Medium" toggleGroup="$priority">
-                                       <font>
-                                          <Font name="Segoe UI" size="16.0" />
-                                       </font>
-                                    </RadioButton>
-                                    <Label text="This task needed attention.">
-                                       <font>
-                                          <Font name="Segoe UI" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                              <VBox spacing="12.0">
-                                 <children>
-                                    <RadioButton fx:id="highRad" mnemonicParsing="false" onAction="#handleRadioButton" text="High" toggleGroup="$priority">
-                                       <font>
-                                          <Font name="Segoe UI" size="16.0" />
-                                       </font>
-                                    </RadioButton>
-                                    <Label text="This task should prioritize.">
-                                       <font>
-                                          <Font name="Segoe UI" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
+                                 <padding>
+                                    <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                                 </padding>
                               </VBox>
                            </children>
                         </VBox>

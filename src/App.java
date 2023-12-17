@@ -1,18 +1,20 @@
+import javafx.fxml.FXMLLoader;
+
 import java.io.FileInputStream;
 import java.io.IOException;
-import javafx.fxml.FXMLLoader;
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import views.dashController;
 import javafx.scene.layout.AnchorPane;
 
 public class App extends Application {
     public static void main(String[] args) {
         launch(args);
+
+        
     }
     @Override
     public void start(Stage stage) throws Exception {
@@ -28,6 +30,11 @@ public class App extends Application {
             stage.setTitle("GROUP 5 - Task Scheduler");
             stage.setResizable(false); // Window Sizing Prevention
             stage.show();
+
+            
+    
+
+            
         } catch (IOException e) {
             System.err.println("Failed to load FXML file: " + e.getMessage());
         }

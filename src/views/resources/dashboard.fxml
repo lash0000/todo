@@ -42,16 +42,16 @@
                               <Font name="Segoe UI" size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToNotif" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Notifications">
-                           <graphic>
-                              <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/bell.png" />
-                                 </image></ImageView>
-                           </graphic>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToTodo" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="To-do">
                            <font>
                               <Font name="Segoe UI" size="18.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/calendar-check.png" />
+                                 </image></ImageView>
+                           </graphic>
                         </Button>
                      </children>
                   </VBox>
@@ -80,22 +80,11 @@
                               <Font name="Segoe UI" size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToTodo" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="To-do">
-                           <font>
-                              <Font name="Segoe UI" size="18.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@img/calendar-check.png" />
-                                 </image></ImageView>
-                           </graphic>
-                        </Button>
                      </children>
                   </VBox>
                   <VBox prefHeight="89.0" prefWidth="224.0" spacing="6.0">
                      <children>
-                        <Button fx:id="label2" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="&lt;string&gt;">
+                        <Button fx:id="label2" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="User">
                            <font>
                               <Font name="Segoe UI" size="18.0" />
                            </font>
@@ -106,7 +95,7 @@
                                  </image></ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Settings">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchSetting" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: transparent;" text="Settings">
                            <font>
                               <Font name="Segoe UI" size="18.0" />
                            </font>
@@ -130,7 +119,7 @@
                <children>
                   <VBox prefHeight="60.0" prefWidth="792.0" spacing="6.0">
                      <children>
-                        <Label fx:id="welcome" text="Good day, &lt;string&gt;">
+                        <Label fx:id="welcome" text="Good day, User">
                            <font>
                               <Font name="Segoe UI Bold" size="24.0" />
                            </font>
@@ -144,30 +133,16 @@
                   </VBox>
                   <HBox prefHeight="185.0" prefWidth="768.0" spacing="24.0">
                      <children>
-                        <VBox prefHeight="182.0" prefWidth="320.0" spacing="6.0" style="-fx-border-color: EBEBEB; -fx-border-radius: 6px;">
+                        <VBox prefHeight="185.0" prefWidth="208.0" spacing="6.0" style="-fx-border-color: EBEBEB; -fx-border-radius: 6px;">
                            <padding>
                               <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
                            </padding>
                            <children>
                               <HBox prefHeight="100.0" prefWidth="286.0" spacing="12.0">
                                  <children>
-                                    <VBox prefHeight="116.0" prefWidth="171.0" spacing="2.0">
-                                       <children>
-                                          <Label fx:id="compTask" style="-fx-text-fill: #24A0ED;" text="0">
-                                             <font>
-                                                <Font name="System Bold" size="48.0" />
-                                             </font>
-                                          </Label>
-                                          <Label text="Completed Task">
-                                             <font>
-                                                <Font name="Segoe UI" size="16.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </VBox>
                                     <VBox prefHeight="116.0" prefWidth="148.0" spacing="2.0">
                                        <children>
-                                          <Label style="-fx-text-fill: #24A0ED;" text="0">
+                                          <Label fx:id="ongoingLbl" style="-fx-text-fill: #24A0ED;" text="0">
                                              <font>
                                                 <Font name="System Bold" size="48.0" />
                                              </font>
@@ -181,7 +156,37 @@
                                     </VBox>
                                  </children>
                               </HBox>
-                              <Label ellipsisString="" prefHeight="48.0" prefWidth="286.0" style="-fx-text-fill: #66C2A4;" text="Don't let your tasks go unorganized, make a to-do list today." wrapText="true">
+                              <Label ellipsisString="" prefHeight="47.0" prefWidth="248.0" style="-fx-text-fill: #66C2A4;" text="Don't let your tasks go unorganized, make a to-do list today." wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="185.0" prefWidth="183.0" spacing="6.0" style="-fx-border-color: EBEBEB; -fx-border-radius: 6px;">
+                           <padding>
+                              <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                           </padding>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="286.0" spacing="12.0">
+                                 <children>
+                                    <VBox prefHeight="116.0" prefWidth="148.0" spacing="2.0">
+                                       <children>
+                                          <Label fx:id="compTaskLbl" style="-fx-text-fill: #24A0ED;" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="48.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Completed Task">
+                                             <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Label ellipsisString="" prefHeight="48.0" prefWidth="164.0" style="-fx-text-fill: #66C2A4;" text="Don't let your tasks go unorganized, make a to-do list today." wrapText="true">
                                  <font>
                                     <Font name="Segoe UI" size="16.0" />
                                  </font>
@@ -214,7 +219,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="25.0" prefWidth="32.0" style="-fx-text-fill: #24A0ED;" text="0">
+                                    <Label fx:id="noDueLbl" prefHeight="25.0" prefWidth="32.0" style="-fx-text-fill: #24A0ED;" text="0">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -228,7 +233,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="25.0" prefWidth="32.0" style="-fx-text-fill: #24A0ED;" text="0">
+                                    <Label fx:id="thisWeekLbl" prefHeight="25.0" prefWidth="32.0" style="-fx-text-fill: #24A0ED;" text="0">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -242,7 +247,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="25.0" prefWidth="32.0" style="-fx-text-fill: #24A0ED;" text="0">
+                                    <Label fx:id="nextWeekLbl" prefHeight="25.0" prefWidth="32.0" style="-fx-text-fill: #24A0ED;" text="0">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
@@ -282,7 +287,7 @@
                                     </VBox>
                                  </children>
                               </HBox>
-                              <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="286.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 2px; -fx-text-fill: white;" text="Log In">
+                              <Button mnemonicParsing="false" onAction="#switchToAddTask" prefHeight="46.0" prefWidth="286.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 2px; -fx-text-fill: white;" text="Log In">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>

@@ -1,15 +1,17 @@
 package views;
 
+import java.time.LocalDate;
+
 public class Task2 {
     private String name;
-    private String startDate;
-    private String endDate;
+     private LocalDate startDate;
+    private LocalDate endDate;
     private String priorityLevel;
     private boolean done;
 
     // Constructors, getters, and setters
 
-    public Task2(String taskName, String startDate, String endDate, String priorityLevel, boolean done) {
+    public Task2(String taskName, LocalDate startDate, LocalDate endDate, String priorityLevel, boolean done) {
         this.name = taskName;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -27,19 +29,19 @@ public class Task2 {
         this.name = name;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
